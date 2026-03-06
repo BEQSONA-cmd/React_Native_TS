@@ -3,11 +3,13 @@
     "name": "my-expo-app",
     "slug": "my-expo-app",
     "version": "1.0.0",
+    "entryPoint": "./node_modules/expo-router/entry",
     "userInterfaceStyle": "automatic",
     "experiments": {
       "tsconfigPaths": true
     },
-    "plugins": [],
-    "orientation": "portrait"
+    "plugins": ["expo-router"],
+    "orientation": "portrait",
+    "scheme": "my-expo-app"
   }
 }
