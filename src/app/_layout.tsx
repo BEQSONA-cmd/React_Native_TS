@@ -1,15 +1,26 @@
 import { Stack } from 'expo-router';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { useEffect } from 'react';
+import { StatusBar } from 'expo-status-bar';
+import * as NavigationBar from 'expo-navigation-bar';
 import './global.css';
 
 export default function RootLayout() {
+
+    useEffect(() => {
+        NavigationBar.setStyle("light");
+    }, []);
+
     return (
         <SafeAreaProvider>
-            <Header />
-            <Stack screenOptions={{ headerShown: false }} />
-            <Footer />
+            <StatusBar style="light" />
+            <SafeAreaView style={{ flex: 1 }}>
+                <Header />
+                <Stack screenOptions={{ headerShown: false }} />
+                <Footer />
+            </SafeAreaView>
         </SafeAreaProvider>
     );
 }
